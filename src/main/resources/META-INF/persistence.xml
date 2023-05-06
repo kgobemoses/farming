@@ -1,0 +1,23 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+	version="2.1">
+
+	<persistence-unit name="testDS" transaction-type="JTA">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<jta-data-source>java:/jdbc/farmingDS</jta-data-source>
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		<properties>
+			<property name="eclipselink.deploy-on-startup" value="True" />
+			<property name="eclipselink.ddl-generation" value="create-tables" />
+			<property name="eclipselink.logging.level.sql" value="FINE" />
+			<property name="eclipselink.logging.parameters" value="true" />
+		</properties>
+	<!--	<jta-data-source>java:/jdbc/gymbuddyDS</jta-data-source>
+		<properties> 
+			  <property name="hibernate.hbm2ddl.auto" value="create" />
+			<property name="hibernate.show_sql" value="true" /> 
+			<property name="hibernate.format_sql" value="true" />
+	</properties>-->
+	</persistence-unit>
+</persistence>
